@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: ping
-          image: apiaoff/ping:<+pipeline.variables.IMAGE_TAG> 
+          image: apiaoff/ping
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080  
