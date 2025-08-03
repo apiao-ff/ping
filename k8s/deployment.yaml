@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ping-deployment
+spec:
+  replicas: 2  
+  selector:
+    matchLabels:
+      app: ping-server  
+  template:
+    metadata:
+      labels:
+        app: ping-server 
+    spec:
+      containers:
+        - name: ping
+          image: apiaoff/ping:latest  
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080  
+          readinessProbe:        
+            httpGet:
+              path: /ping
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 5
