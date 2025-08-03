@@ -1,6 +1,6 @@
 # 第一阶段：构建 Go 程序（使用完整镜像）
 FROM golang:1.24 AS builder
-
+ENV GOPROXY=https://goproxy.cn,direct
 WORKDIR /app
 
 # 拷贝依赖文件并下载依赖
