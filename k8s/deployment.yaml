@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: ping
-          image: apiaoff/ping:lateset
+          image: apiaoff/ping:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080  
